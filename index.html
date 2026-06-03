@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>GeoPB - Municípios da Paraíba</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <!-- PAINEL ESQUERDO -->
+
+    <aside class="sidebar">
+
+        <h2>GeoPB</h2>
+
+        <input
+            type="text"
+            id="busca"
+            placeholder="Pesquisar município..." />
+
+        <div class="filtros">
+
+            <h3>Filtro por Área</h3>
+
+            <select id="filtroPopulacao">
+
+                <option value="0">
+                    Todas as áreas
+                </option>
+
+                <option value="100">
+                    Acima de 100 km²
+                </option>
+
+                <option value="250">
+                    Acima de 250 km²
+                </option>
+
+                <option value="500">
+                    Acima de 500 km²
+                </option>
+
+                <option value="1000">
+                    Acima de 1000 km²
+                </option>
+
+            </select>
+
+        </div>
+
+        <button id="btnLocalizacao">
+            Minha Localização
+        </button>
+
+        <div id="estatisticas">
+
+            Carregando estatísticas...
+
+        </div>
+
+        <h3>Municípios</h3>
+
+        <div id="listaMunicipios"></div>
+
+    </aside>
+
+    <!-- MAPA -->
+
+    <main>
+
+        <div id="map"></div>
+
+    </main>
+
+    <!-- PAINEL DIREITO -->
+
+    <aside class="info-panel">
+
+        <h2>Informações</h2>
+
+        <div id="dadosMunicipio">
+
+            <p>
+                Clique em um município
+                para visualizar os dados.
+            </p>
+
+        </div>
+
+        <canvas id="graficoMunicipio"></canvas>
+
+    </aside>
+
+    <!-- LEAFLET -->
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+
+    <!-- GEOCODIFICADOR -->
+
+    <script
+        src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js">
+    </script>
+
+    <!-- SCRIPT PRINCIPAL -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
